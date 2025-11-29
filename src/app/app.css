@@ -1,4 +1,46 @@
-.main-home{
-    width: 100%;
-    display: flex;
+/* LAYOUT PRINCIPAL */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
+
+/* HEADER */
+.header {
+  background: #1e293b;
+  color: white;
+  flex-shrink: 0; /* ← IMPORTANTE */
+}
+
+/* FOOTER */
+.footer {
+  background: #1e293b;
+  color: white;
+  flex-shrink: 0; /* ← IMPORTANTE */
+}
+
+/* ZONA CENTRAL → aside + home */
+.body {
+  flex: 1;
+  display: flex;
+  overflow: hidden; /* ← EVITA EL SCROLL GIGANTE */
+}
+
+/* ASIDE */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  overflow-y: auto; /* ← SOLO SCROLL VERTICAL SI ES NECESARIO */
+  overflow-x: hidden;
+  background: #f5f5f5;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  min-width: 0;     /* ← SIN ESTO, SIEMPRE HABRÁ SCROLL */
+  overflow-y: auto; /* ← SCROLL SOLO DENTRO DEL MAIN */
+  padding: 20px;    /* ← SEPARA DEL HEADER */
+  background: white;
+}
+

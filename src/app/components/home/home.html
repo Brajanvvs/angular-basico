@@ -1,115 +1,64 @@
 <main class="main">
 
-    <article class="card-article">
-        <img src="Portatil-1.png" alt="">
-        <h3>Lenovo</h3>
-        <h1>Lenovo Gamer 5090 RTX</h1>
-        <p>$11.300.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+  <section class="formulario">
+    <h2>Registrar Producto</h2>
 
-    <article class="card-article">
-        <img src="Mazda.png" alt="">
-        <h3>Mitsubishi Motors</h3>
-        <h1>Mitsubishi New L200 Triton Mecanica</h1>
-        <p>$209.900.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+    <form>
 
-    <article class="card-article">
-        <img src="Portatil-1.png" alt="">
-        <h3>Lenovo</h3>
-        <h1>Lenovo Gamer 5090 RTX</h1>
-        <p>$11.300.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+      <label>Imagen</label>
+      <input [(ngModel)]="producto.imagen" name="imagen" placeholder="ej: Mazda.png">
 
-    <article class="card-article">
-        <img src="Mazda.png" alt="">
-        <h3>Mitsubishi Motors</h3>
-        <h1>Mitsubishi New L200 Triton Mecanica</h1>
-        <p>$209.900.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+      <label>Empresa</label>
+      <input [(ngModel)]="producto.empresa" name="empresa" placeholder="ej: Mitsubishi Motors">
 
-    <article class="card-article">
-        <img src="Portatil-1.png" alt="">
-        <h3>Lenovo</h3>
-        <h1>Lenovo Gamer 5090 RTX</h1>
-        <p>$11.300.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+      <label>Nombre del producto</label>
+      <input [(ngModel)]="producto.nombre" name="nombre" placeholder="ej: New L200 Triton">
 
-    <article class="card-article">
-        <img src="Mazda.png" alt="">
-        <h3>Mitsubishi Motors</h3>
-        <h1>Mitsubishi New L200 Triton Mecanica</h1>
-        <p>$209.900.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+      <label>Precio</label>
+      <input type="number" [(ngModel)]="producto.precio" name="precio" placeholder="ej: 20990000">
 
-    <article class="card-article">
-        <img src="Portatil-1.png" alt="">
-        <h3>Lenovo</h3>
-        <h1>Lenovo Gamer 5090 RTX</h1>
-        <p>$11.300.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+      <label>Ciudad</label>
+      <input [(ngModel)]="producto.ciudad" name="ciudad" placeholder="ej: Villavicencio - Meta">
 
-    <article class="card-article">
-        <img src="Mazda.png" alt="">
-        <h3>Mitsubishi Motors</h3>
-        <h1>Mitsubishi New L200 Triton Mecanica</h1>
-        <p>$209.900.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+      <button type="button" (click)="agregarProducto()">Agregar Producto</button>
 
-    <article class="card-article">
-        <img src="Mazda.png" alt="">
-        <h3>Mitsubishi Motors</h3>
-        <h1>Mitsubishi New L200 Triton Mecanica</h1>
-        <p>$209.900.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+    </form>
+  </section>
 
-    <article class="card-article">
-        <img src="Portatil-1.png" alt="">
-        <h3>Lenovo</h3>
-        <h1>Lenovo Gamer 5090 RTX</h1>
-        <p>$11.300.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
 
-    <article class="card-article">
-        <img src="Mazda.png" alt="">
-        <h3>Mitsubishi Motors</h3>
-        <h1>Mitsubishi New L200 Triton Mecanica</h1>
-        <p>$209.900.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+  <section class="lista-productos">
+    <h2>Productos Registrados</h2>
 
-    <article class="card-article">
-        <img src="Mazda.png" alt="">
-        <h3>Mitsubishi Motors</h3>
-        <h1>Mitsubishi New L200 Triton Mecanica</h1>
-        <p>$209.900.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+    <div class="contenedor-productos">
+      <article class="card-article" *ngFor="let p of listaProductos">
+        <img [src]="p.imagen">
+        <h3>{{ p.empresa }}</h3>
+        <h1>{{ p.nombre }}</h1>
+        <p>${{ p.precio }}</p>
+        <h3>{{ p.ciudad }}</h3>
+      </article>
+    </div>
+  </section>
 
-    <article class="card-article">
-        <img src="Portatil-1.png" alt="">
-        <h3>Lenovo</h3>
-        <h1>Lenovo Gamer 5090 RTX</h1>
-        <p>$11.300.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
 
-    <article class="card-article">
-        <img src="Mazda.png" alt="">
-        <h3>Mitsubishi Motors</h3>
-        <h1>Mitsubishi New L200 Triton Mecanica</h1>
-        <p>$209.900.000</p>
-        <h3>Villavicencio - Meta</h3>
-    </article>
+
+    <div class="card-tema"
+     [ngClass]="{
+       'alerta-roja': tema.dificultad === 'alta',
+       'alerta-verde': tema.dificultad === 'baja'
+     }">
+    </div>
+
+
+    
+
+
+
+
+
+
+
+
+
 
 </main>

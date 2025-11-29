@@ -6,11 +6,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   templateUrl: './ciclo-de-vida.html',
   styleUrl: './ciclo-de-vida.css',
 })
-export class CicloDeVida implements OnInit, OnDestroy{
+export class CicloDeVida implements OnInit{
 
-  ngOnDestroy(): void {
-    console.log("Se Destruyo el Componente");
-  }
+  // ngOnDestroy(): void {
+  //   console.log("Se Destruyo el Componente");
+  // }
 
   ngOnInit(): void {
     console.log("Se cargo el componente");

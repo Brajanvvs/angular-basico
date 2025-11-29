@@ -3,13 +3,16 @@ import { RouterOutlet } from '@angular/router';
 import { Home } from "./components/home/home";
 import { Aside } from "./components/aside/aside";
 import { CicloDeVida } from "./components/ciclo-de-vida/ciclo-de-vida";
+import { Footer } from "./components/footer/footer";
+import { Header } from './components/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Home, Aside, CicloDeVida],
+  imports: [RouterOutlet, Home, Aside, CicloDeVida, Footer, Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('mercadolibre');
+titulo: any;
 }
